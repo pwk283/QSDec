@@ -1,0 +1,27 @@
+﻿Select a.PolicyNum,
+c.MBrokerNo, 
+b.TransID, 
+b.[FileName], 
+c.MInsuredName,
+Case b.Transtype
+When 'Issue' then 
+Case c.MuserTranRequest 
+when '01' then 'New'
+when '06' then 'Renewal'
+when '13' then 'Reinstatement' end else b.transType  end as Trtype,
+convert (datetime,substring (Cast(c.morigeff as Char), 3, 2)+'/'+right(c.morigeff,2)+'/'+left(c.morigeff,2)) as effDate,
+Case when c.MctLine03 > 0 then 'AUTO'
+else Case when c.MctLine24 > 0 then 'UMB'
+else Case when c.MctLine51 > 0 then 'PROP'
+else Case when c.MctLine22 > 0 then 'GL'
+else Case when c.MctLine55 > 0 then 'IM' 
+Else 'XXX' End End End End End as PolType 
+into #t1
+from Daily_passFail as a  
+inner join 
+Daily_QSPDF as b on a.PolicyNum = b.PolicyNum and a.TransID = b.TransID 
+inner join 
+DailyActivity_report as c on  c.Mstate = Cast(substring(a.PolicyNum,1,2) as integer) 
+and c.MAcctNo+c.Filler11=Substring(a.policyNum,3,8) 
+where a.Status = 'PASS' and MBrokerNo > 0 
+order by a.PolicyNum

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f80abd5387f34b4d95ec5463885c35e6" Name="Diagram1">
+        <EntityTypeShape EntityType="ARModel.Daily_PassFail" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="ARModel.DailyActivity_Report" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="ARModel.Daily_QSPdf" Width="1.5" PointX="2.25" PointY="0.5" />
+        <EntityTypeShape EntityType="ARModel.PortalPolicyPrints" Width="1.5" PointX="6.125" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

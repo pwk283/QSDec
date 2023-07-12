@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Daily_PassFail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PolicyNum" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Status" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="TransID" Type="smallint" Nullable="false" />
+          <Property Name="PrintDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Daily_QSPdf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PolicyNum" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TransType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransID" Type="smallint" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="PrintDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailyActivity_Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MLastTran" Type="int" />
+          <Property Name="MSystemId" Type="char" MaxLength="1" />
+          <Property Name="MState" Type="smallint" />
+          <Property Name="MAcctNo" Type="char" MaxLength="4" />
+          <Property Name="Filler11" Type="char" MaxLength="4" />
+          <Property Name="MLineCode" Type="char" MaxLength="2" />
+          <Property Name="MSeqNo" Type="smallint" />
+          <Property Name="MRecType" Type="char" MaxLength="2" />
+          <Property Name="MasterRecLength" Type="int" />
+          <Property Name="MEditSwitch" Type="char" MaxLength="1" />
+          <Property Name="MRateSwitch" Type="char" MaxLength="1" />
+          <Property Name="MStatSwitch" Type="char" MaxLength="1" />
+          <Property Name="MPend1" Type="char" MaxLength="2" />
+          <Property Name="MPendDate1" Type="int" />
+          <Property Name="MPend2" Type="char" MaxLength="2" />
+          <Property Name="MPendDate2" Type="int" />
+          <Property Name="MPend3" Type="char" MaxLength="2" />
+          <Property Name="MPendDate3" Type="int" />
+          <Property Name="MPend4" Type="char" MaxLength="2" />
+          <Property Name="MPendDate4" Type="int" />
+          <Property Name="MPend5" Type="char" MaxLength="2" />
+          <Property Name="MPendDate5" Type="int" />
+          <Property Name="MPend6" Type="char" MaxLength="2" />
+          <Property Name="MPendDate6" Type="int" />
+          <Property Name="MPend7" Type="char" MaxLength="2" />
+          <Property Name="MPendDate7" Type="int" />
+          <Property Name="MPend8" Type="char" MaxLength="2" />
+          <Property Name="MPendDate8" Type="int" />
+          <Property Name="MAgency4" Type="char" MaxLength="4" />
+          <Property Name="MSubAgent" Type="char" MaxLength="2" />
+          <Property Name="Filler21" Type="char" MaxLength="2" />
+          <Property Name="MNameType" Type="char" MaxLength="1" />
+          <Property Name="MLongName" Type="char" MaxLength="1" />
+          <Property Name="MInsuredName" Type="char" MaxLength="30" />
+          <Property Name="MInsuredSecondName" Type="char" MaxLength="30" />
+          <Property Name="MInsuredStreet" Type="char" MaxLength="25" />
+          <Property Name="MInsuredCity" Type="char" MaxLength="23" />
+          <Property Name="MInsuredState" Type="char" MaxLength="2" />
+          <Property Name="MInsuredZipCode" Type="char" MaxLength="5" />
+          <Property Name="Filler31" Type="char" MaxLength="5" />
+          <Property Name="MInsuredOccupation" Type="char" MaxLength="40" />
+          <Property Name="MInsuredBusAssos" Type="char" MaxLength="20" />
+          <Property Name="MInsuredArea" Type="char" MaxLength="10" />
+          <Property Name="MOrigIncep" Type="int" />
+          <Property Name="MOrigEff" Type="int" />
+          <Property Name="MOrigExp" Type="int" />
+          <Property Name="MProcDateNb" Type="int" />
+          <Property Name="MProcDateCanc" Type="int" />
+          <Property Name="MProcDateRen" Type="int" />
+          <Property Name="MLastChgEffDate" Type="int" />
+          <Property Name="MLastTranDate" Type="int" />
+          <Property Name="MLastHistDate" Type="int" />
+          <Property Name="MTerminDate" Type="int" />
+          <Property Name="MTermReason" Type="char" MaxLength="2" />
+          <Property Name="MReinDate" Type="int" />
+          <Property Name="MReinReason" Type="char" MaxLength="2" />
+          <Property Name="MCarryDate" Type="int" />
+          <Property Name="MDueDate" Type="int" />
+          <Property Name="MExtDueDate" Type="int" />
+          <Property Name="MReasonDue" Type="char" MaxLength="2" />
+          <Property Name="MStatusCode" Type="char" MaxLength="2" />
+          <Property Name="MTotalPolPrem" Type="float" />
+          <Property Name="MAmtDue" Type="float" />
+          <Property Name="MCashPaid" Type="float" />
+          <Property Name="MCashPaidAn" Type="char" MaxLength="5" />
+          <Property Name="MAmtBilled" Type="float" />
+          <Property Name="MEzAmtBilled" Type="float" />
+          <Property Name="Filler41" Type="char" MaxLength="2" />
+          <Property Name="MInstallNo" Type="smallint" />
+          <Property Name="MBillsCombined" Type="smallint" />
+          <Property Name="MRenBillInd" Type="char" MaxLength="1" />
+          <Property Name="MCashCancel" Type="float" />
+          <Property Name="MCancVoidAmt" Type="float" />
+          <Property Name="MCancProRate" Type="float" />
+          <Property Name="MCancelFlag" Type="char" MaxLength="1" />
+          <Property Name="MPackageCode" Type="char" MaxLength="2" />
+          <Property Name="MPolTerm" Type="char" MaxLength="2" />
+          <Property Name="MPolType" Type="char" MaxLength="1" />
+          <Property Name="MUwPerCode" Type="char" MaxLength="2" />
+          <Property Name="MUwFdcCode" Type="char" MaxLength="2" />
+          <Property Name="MMvrCode1" Type="char" MaxLength="1" />
+          <Property Name="MMvrCode2" Type="char" MaxLength="1" />
+          <Property Name="MQuestOrderDate" Type="int" />
+          <Property Name="MTypeOfPolicy" Type="smallint" />
+          <Property Name="Filler51" Type="char" MaxLength="1" />
+          <Property Name="MGroupInsNo" Type="char" MaxLength="4" />
+          <Property Name="MLossContFreq" Type="char" MaxLength="1" />
+          <Property Name="MLossContNumber" Type="char" MaxLength="1" />
+          <Property Name="MLossContTerr" Type="char" MaxLength="1" />
+          <Property Name="MLossContGrade" Type="char" MaxLength="1" />
+          <Property Name="Filler61" Type="char" MaxLength="4" />
+          <Property Name="MNoIsfChecks" Type="smallint" />
+          <Property Name="MConvInd" Type="char" MaxLength="1" />
+          <Property Name="MStProRate" Type="float" />
+          <Property Name="MBillingState" Type="char" MaxLength="2" />
+          <Property Name="MFormState" Type="char" MaxLength="2" />
+          <Property Name="MOptEasypayPlan" Type="char" MaxLength="1" />
+          <Property Name="MTimesBilled" Type="smallint" />
+          <Property Name="MTimesToBill" Type="smallint" />
+          <Property Name="MDepositRecvd" Type="float" />
+          <Property Name="MInstallmentAmt" Type="float" />
+          <Property Name="MCslInd" Type="char" MaxLength="1" />
+          <Property Name="MNewServChrgInd" Type="char" MaxLength="1" />
+          <Property Name="MRevAuditInd" Type="char" MaxLength="1" />
+          <Property Name="MAuditPrint" Type="char" MaxLength="1" />
+          <Property Name="MCompany" Type="smallint" />
+          <Property Name="MBranch" Type="smallint" />
+          <Property Name="Filler71" Type="char" MaxLength="15" />
+          <Property Name="MCovInforceInd" Type="char" MaxLength="1" />
+          <Property Name="Filler81" Type="char" MaxLength="2" />
+          <Property Name="MCtLine01" Type="smallint" />
+          <Property Name="MCtLine02" Type="smallint" />
+          <Property Name="MCtLine03" Type="smallint" />
+          <Property Name="MCtLine04" Type="smallint" />
+          <Property Name="MCtLine05" Type="smallint" />
+          <Property Name="MCtLine06" Type="smallint" />
+          <Property Name="MCtLine07" Type="smallint" />
+          <Property Name="MCtLine08" Type="smallint" />
+          <Property Name="MCtLine09" Type="smallint" />
+          <Property Name="MCtLine10" Type="smallint" />
+          <Property Name="MCtLine11" Type="smallint" />
+          <Property Name="MCtLine12" Type="smallint" />
+          <Property Name="MCtLine20" Type="smallint" />
+          <Property Name="MCtLine21" Type="smallint" />
+          <Property Name="MCtLine22" Type="smallint" />
+          <Property Name="MCtLine23" Type="smallint" />
+          <Property Name="MCtLine24" Type="smallint" />
+          <Property Name="MCtLine30" Type="smallint" />
+          <Property Name="MCtLine40" Type="smallint" />
+          <Property Name="MCtLine41" Type="smallint" />
+          <Property Name="MCtLine42" Type="smallint" />
+          <Property Name="MCtLine43" Type="smallint" />
+          <Property Name="MCtLine50" Type="smallint" />
+          <Property Name="MCtLine51" Type="smallint" />
+          <Property Name="MCtLine52" Type="smallint" />
+          <Property Name="MCtLine53" Type="smallint" />
+          <Property Name="MCtLine54" Type="smallint" />
+          <Property Name="MCtLine55" Type="smallint" />
+          <Property Name="MCtLine56" Type="smallint" />
+          <Property Name="MCtLine57" Type="smallint" />
+          <Property Name="MCtLine60" Type="smallint" />
+          <Property Name="MCtLine61" Type="smallint" />
+          <Property Name="MCtLine14" Type="smallint" />
+          <Property Name="MCtLineSc" Type="smallint" />
+          <Property Name="MCtLine26" Type="smallint" />
+          <Property Name="MCtOpen4" Type="smallint" />
+          <Property Name="MBrokerNo" Type="smallint" />
+          <Property Name="MSuplAcctNo" Type="char" MaxLength="4" />
+          <Property Name="MPaymentFrequency" Type="smallint" />
+          <Property Name="AdditionalPayments" Type="smallint" />
+          <Property Name="MMemo1" Type="char" MaxLength="50" />
+          <Property Name="MMemo2" Type="char" MaxLength="50" />
+          <Property Name="MUserDateOfEntry" Type="char" MaxLength="6" />
+          <Property Name="MUserTimeOfEntry" Type="char" MaxLength="6" />
+          <Property Name="MUserTid" Type="char" MaxLength="4" />
+          <Property Name="MUserUid" Type="char" MaxLength="8" />
+          <Property Name="MUserGroup1" Type="char" MaxLength="8" />
+          <Property Name="MUserGroup2" Type="char" MaxLength="8" />
+          <Property Name="MUserSecurityCode" Type="char" MaxLength="4" />
+          <Property Name="MUserTrId1" Type="char" MaxLength="6" />
+          <Property Name="MUserTrIdSufx" Type="char" MaxLength="2" />
+          <Property Name="MUserTranRequest" Type="char" MaxLength="2" />
+          <Property Name="MUserUidComment" Type="char" MaxLength="30" />
+          <Property Name="InsuredAssocCode12" Type="char" MaxLength="2" />
+          <Property Name="Filler91" Type="char" MaxLength="1" />
+          <Property Name="MPend2BeforeCancel" Type="char" MaxLength="2" />
+          <Property Name="MSpecialTrans1" Type="char" MaxLength="1" />
+          <Property Name="MSpecialTrans2" Type="char" MaxLength="1" />
+          <Property Name="MSpecialTrans3" Type="char" MaxLength="1" />
+          <Property Name="MPml" Type="char" MaxLength="3" />
+          <Property Name="MAmtSub" Type="char" MaxLength="11" />
+          <Property Name="MPriorChgeffYmd" Type="char" MaxLength="6" />
+          <Property Name="MPriorPoleffYmd" Type="char" MaxLength="6" />
+          <Property Name="MPriorPolexpYmd" Type="char" MaxLength="6" />
+          <Property Name="EverDifferent" Type="char" MaxLength="1" />
+          <Property Name="MDriverCheck" Type="char" MaxLength="1" />
+          <Property Name="MBmResource" Type="char" MaxLength="1" />
+          <Property Name="Filler1011" Type="char" MaxLength="254" />
+          <Property Name="Filler1021" Type="char" MaxLength="62" />
+        </EntityType>
+        <EntityType Name="PortalPolicyPrints">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoadDate" Type="datetime" Nullable="false" />
+          <Property Name="PolicyNum" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MBrokerNo" Type="smallint" />
+          <Property Name="TransID" Type="smallint" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="MInsuredName" Type="char" MaxLength="30" />
+          <Property Name="Trtype" Type="varchar" MaxLength="50" />
+          <Property Name="effDate" Type="datetime" />
+          <Property Name="PolType" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <Function Name="prc_DailyTapeImport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="prc_PolicyPrintFeedLoad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="prc_QSPDFsToPrint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ARModelStoreContainer">
+          <EntitySet Name="Daily_PassFail" EntityType="Self.Daily_PassFail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Daily_QSPdf" EntityType="Self.Daily_QSPdf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailyActivity_Report" EntityType="Self.DailyActivity_Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PortalPolicyPrints" EntityType="Self.PortalPolicyPrints" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AREntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="prc_DailyTapeImport" />
+          <FunctionImport Name="prc_PolicyPrintFeedLoad" />
+          <FunctionImport Name="prc_QSPDFsToPrint" ReturnType="Collection(ARModel.prc_QSPDFsToPrint_Result)" />
+          <EntitySet Name="Daily_PassFail" EntityType="ARModel.Daily_PassFail" />
+          <EntitySet Name="DailyActivity_Report" EntityType="ARModel.DailyActivity_Report" />
+          <EntitySet Name="Daily_QSPdf" EntityType="ARModel.Daily_QSPdf" />
+          <EntitySet Name="PortalPolicyPrints" EntityType="ARModel.PortalPolicyPrints" />
+        </EntityContainer>
+        <ComplexType Name="prc_QSPDFsToPrint_Result">
+          <Property Type="String" Name="PolicyNum" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FileName" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Daily_PassFail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PolicyNum" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="TransID" Type="Int16" Nullable="false" />
+          <Property Name="PrintDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="DailyActivity_Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MLastTran" Type="Int32" />
+          <Property Name="MSystemId" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MState" Type="Int16" />
+          <Property Name="MAcctNo" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="Filler11" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MLineCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MSeqNo" Type="Int16" />
+          <Property Name="MRecType" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MasterRecLength" Type="Int32" />
+          <Property Name="MEditSwitch" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MRateSwitch" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MStatSwitch" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MPend1" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate1" Type="Int32" />
+          <Property Name="MPend2" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate2" Type="Int32" />
+          <Property Name="MPend3" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate3" Type="Int32" />
+          <Property Name="MPend4" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate4" Type="Int32" />
+          <Property Name="MPend5" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate5" Type="Int32" />
+          <Property Name="MPend6" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate6" Type="Int32" />
+          <Property Name="MPend7" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate7" Type="Int32" />
+          <Property Name="MPend8" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPendDate8" Type="Int32" />
+          <Property Name="MAgency4" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MSubAgent" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Filler21" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MNameType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MLongName" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredName" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredSecondName" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredStreet" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredCity" Type="String" MaxLength="23" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredZipCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Filler31" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredOccupation" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredBusAssos" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="MInsuredArea" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MOrigIncep" Type="Int32" />
+          <Property Name="MOrigEff" Type="Int32" />
+          <Property Name="MOrigExp" Type="Int32" />
+          <Property Name="MProcDateNb" Type="Int32" />
+          <Property Name="MProcDateCanc" Type="Int32" />
+          <Property Name="MProcDateRen" Type="Int32" />
+          <Property Name="MLastChgEffDate" Type="Int32" />
+          <Property Name="MLastTranDate" Type="Int32" />
+          <Property Name="MLastHistDate" Type="Int32" />
+          <Property Name="MTerminDate" Type="Int32" />
+          <Property Name="MTermReason" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MReinDate" Type="Int32" />
+          <Property Name="MReinReason" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MCarryDate" Type="Int32" />
+          <Property Name="MDueDate" Type="Int32" />
+          <Property Name="MExtDueDate" Type="Int32" />
+          <Property Name="MReasonDue" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MStatusCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MTotalPolPrem" Type="Double" />
+          <Property Name="MAmtDue" Type="Double" />
+          <Property Name="MCashPaid" Type="Double" />
+          <Property Name="MCashPaidAn" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="MAmtBilled" Type="Double" />
+          <Property Name="MEzAmtBilled" Type="Double" />
+          <Property Name="Filler41" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MInstallNo" Type="Int16" />
+          <Property Name="MBillsCombined" Type="Int16" />
+          <Property Name="MRenBillInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MCashCancel" Type="Double" />
+          <Property Name="MCancVoidAmt" Type="Double" />
+          <Property Name="MCancProRate" Type="Double" />
+          <Property Name="MCancelFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MPackageCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPolTerm" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MPolType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MUwPerCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MUwFdcCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MMvrCode1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MMvrCode2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MQuestOrderDate" Type="Int32" />
+          <Property Name="MTypeOfPolicy" Type="Int16" />
+          <Property Name="Filler51" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MGroupInsNo" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MLossContFreq" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MLossContNumber" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MLossContTerr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MLossContGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Filler61" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MNoIsfChecks" Type="Int16" />
+          <Property Name="MConvInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MStProRate" Type="Double" />
+          <Property Name="MBillingState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MFormState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MOptEasypayPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MTimesBilled" Type="Int16" />
+          <Property Name="MTimesToBill" Type="Int16" />
+          <Property Name="MDepositRecvd" Type="Double" />
+          <Property Name="MInstallmentAmt" Type="Double" />
+          <Property Name="MCslInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MNewServChrgInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MRevAuditInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MAuditPrint" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MCompany" Type="Int16" />
+          <Property Name="MBranch" Type="Int16" />
+          <Property Name="Filler71" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="MCovInforceInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Filler81" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MCtLine01" Type="Int16" />
+          <Property Name="MCtLine02" Type="Int16" />
+          <Property Name="MCtLine03" Type="Int16" />
+          <Property Name="MCtLine04" Type="Int16" />
+          <Property Name="MCtLine05" Type="Int16" />
+          <Property Name="MCtLine06" Type="Int16" />
+          <Property Name="MCtLine07" Type="Int16" />
+          <Property Name="MCtLine08" Type="Int16" />
+          <Property Name="MCtLine09" Type="Int16" />
+          <Property Name="MCtLine10" Type="Int16" />
+          <Property Name="MCtLine11" Type="Int16" />
+          <Property Name="MCtLine12" Type="Int16" />
+          <Property Name="MCtLine20" Type="Int16" />
+          <Property Name="MCtLine21" Type="Int16" />
+          <Property Name="MCtLine22" Type="Int16" />
+          <Property Name="MCtLine23" Type="Int16" />
+          <Property Name="MCtLine24" Type="Int16" />
+          <Property Name="MCtLine30" Type="Int16" />
+          <Property Name="MCtLine40" Type="Int16" />
+          <Property Name="MCtLine41" Type="Int16" />
+          <Property Name="MCtLine42" Type="Int16" />
+          <Property Name="MCtLine43" Type="Int16" />
+          <Property Name="MCtLine50" Type="Int16" />
+          <Property Name="MCtLine51" Type="Int16" />
+          <Property Name="MCtLine52" Type="Int16" />
+          <Property Name="MCtLine53" Type="Int16" />
+          <Property Name="MCtLine54" Type="Int16" />
+          <Property Name="MCtLine55" Type="Int16" />
+          <Property Name="MCtLine56" Type="Int16" />
+          <Property Name="MCtLine57" Type="Int16" />
+          <Property Name="MCtLine60" Type="Int16" />
+          <Property Name="MCtLine61" Type="Int16" />
+          <Property Name="MCtLine14" Type="Int16" />
+          <Property Name="MCtLineSc" Type="Int16" />
+          <Property Name="MCtLine26" Type="Int16" />
+          <Property Name="MCtOpen4" Type="Int16" />
+          <Property Name="MBrokerNo" Type="Int16" />
+          <Property Name="MSuplAcctNo" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MPaymentFrequency" Type="Int16" />
+          <Property Name="AdditionalPayments" Type="Int16" />
+          <Property Name="MMemo1" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MMemo2" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MUserDateOfEntry" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MUserTimeOfEntry" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MUserTid" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MUserUid" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="MUserGroup1" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="MUserGroup2" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="MUserSecurityCode" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MUserTrId1" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MUserTrIdSufx" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MUserTranRequest" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MUserUidComment" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="InsuredAssocCode12" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Filler91" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MPend2BeforeCancel" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MSpecialTrans1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MSpecialTrans2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MSpecialTrans3" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MPml" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="MAmtSub" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="MPriorChgeffYmd" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MPriorPoleffYmd" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MPriorPolexpYmd" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="EverDifferent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MDriverCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MBmResource" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Filler1011" Type="String" MaxLength="254" FixedLength="true" Unicode="false" />
+          <Property Name="Filler1021" Type="String" MaxLength="62" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Daily_QSPdf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PolicyNum" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="TransType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransID" Type="Int16" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PrintDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="PortalPolicyPrints">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoadDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PolicyNum" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MBrokerNo" Type="Int16" />
+          <Property Name="TransID" Type="Int16" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="MInsuredName" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Trtype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="effDate" Type="DateTime" Precision="3" />
+          <Property Name="PolType" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ARModelStoreContainer" CdmEntityContainer="AREntities">
+          <FunctionImportMapping FunctionImportName="prc_DailyTapeImport" FunctionName="ARModel.Store.prc_DailyTapeImport" />
+          <FunctionImportMapping FunctionImportName="prc_PolicyPrintFeedLoad" FunctionName="ARModel.Store.prc_PolicyPrintFeedLoad" />
+          <FunctionImportMapping FunctionImportName="prc_QSPDFsToPrint" FunctionName="ARModel.Store.prc_QSPDFsToPrint">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ARModel.prc_QSPDFsToPrint_Result">
+                <ScalarProperty Name="PolicyNum" ColumnName="PolicyNum" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Daily_PassFail">
+            <EntityTypeMapping TypeName="ARModel.Daily_PassFail">
+              <MappingFragment StoreEntitySet="Daily_PassFail">
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="TransID" ColumnName="TransID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PolicyNum" ColumnName="PolicyNum" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DailyActivity_Report">
+            <EntityTypeMapping TypeName="ARModel.DailyActivity_Report">
+              <MappingFragment StoreEntitySet="DailyActivity_Report">
+                <ScalarProperty Name="Filler1021" ColumnName="Filler1021" />
+                <ScalarProperty Name="Filler1011" ColumnName="Filler1011" />
+                <ScalarProperty Name="MBmResource" ColumnName="MBmResource" />
+                <ScalarProperty Name="MDriverCheck" ColumnName="MDriverCheck" />
+                <ScalarProperty Name="EverDifferent" ColumnName="EverDifferent" />
+                <ScalarProperty Name="MPriorPolexpYmd" ColumnName="MPriorPolexpYmd" />
+                <ScalarProperty Name="MPriorPoleffYmd" ColumnName="MPriorPoleffYmd" />
+                <ScalarProperty Name="MPriorChgeffYmd" ColumnName="MPriorChgeffYmd" />
+                <ScalarProperty Name="MAmtSub" ColumnName="MAmtSub" />
+                <ScalarProperty Name="MPml" ColumnName="MPml" />
+                <ScalarProperty Name="MSpecialTrans3" ColumnName="MSpecialTrans3" />
+                <ScalarProperty Name="MSpecialTrans2" ColumnName="MSpecialTrans2" />
+                <ScalarProperty Name="MSpecialTrans1" ColumnName="MSpecialTrans1" />
+                <ScalarProperty Name="MPend2BeforeCancel" ColumnName="MPend2BeforeCancel" />
+                <ScalarProperty Name="Filler91" ColumnName="Filler91" />
+                <ScalarProperty Name="InsuredAssocCode12" ColumnName="InsuredAssocCode12" />
+                <ScalarProperty Name="MUserUidComment" ColumnName="MUserUidComment" />
+                <ScalarProperty Name="MUserTranRequest" ColumnName="MUserTranRequest" />
+                <ScalarProperty Name="MUserTrIdSufx" ColumnName="MUserTrIdSufx" />
+                <ScalarProperty Name="MUserTrId1" ColumnName="MUserTrId1" />
+                <ScalarProperty Name="MUserSecurityCode" ColumnName="MUserSecurityCode" />
+                <ScalarProperty Name="MUserGroup2" ColumnName="MUserGroup2" />
+                <ScalarProperty Name="MUserGroup1" ColumnName="MUserGroup1" />
+                <ScalarProperty Name="MUserUid" ColumnName="MUserUid" />
+                <ScalarProperty Name="MUserTid" ColumnName="MUserTid" />
+                <ScalarProperty Name="MUserTimeOfEntry" ColumnName="MUserTimeOfEntry" />
+                <ScalarProperty Name="MUserDateOfEntry" ColumnName="MUserDateOfEntry" />
+                <ScalarProperty Name="MMemo2" ColumnName="MMemo2" />
+                <ScalarProperty Name="MMemo1" ColumnName="MMemo1" />
+                <ScalarProperty Name="AdditionalPayments" ColumnName="AdditionalPayments" />
+                <ScalarProperty Name="MPaymentFrequency" ColumnName="MPaymentFrequency" />
+                <ScalarProperty Name="MSuplAcctNo" ColumnName="MSuplAcctNo" />
+                <ScalarProperty Name="MBrokerNo" ColumnName="MBrokerNo" />
+                <ScalarProperty Name="MCtOpen4" ColumnName="MCtOpen4" />
+                <ScalarProperty Name="MCtLine26" ColumnName="MCtLine26" />
+                <ScalarProperty Name="MCtLineSc" ColumnName="MCtLineSc" />
+                <ScalarProperty Name="MCtLine14" ColumnName="MCtLine14" />
+                <ScalarProperty Name="MCtLine61" ColumnName="MCtLine61" />
+                <ScalarProperty Name="MCtLine60" ColumnName="MCtLine60" />
+                <ScalarProperty Name="MCtLine57" ColumnName="MCtLine57" />
+                <ScalarProperty Name="MCtLine56" ColumnName="MCtLine56" />
+                <ScalarProperty Name="MCtLine55" ColumnName="MCtLine55" />
+                <ScalarProperty Name="MCtLine54" ColumnName="MCtLine54" />
+                <ScalarProperty Name="MCtLine53" ColumnName="MCtLine53" />
+                <ScalarProperty Name="MCtLine52" ColumnName="MCtLine52" />
+                <ScalarProperty Name="MCtLine51" ColumnName="MCtLine51" />
+                <ScalarProperty Name="MCtLine50" ColumnName="MCtLine50" />
+                <ScalarProperty Name="MCtLine43" ColumnName="MCtLine43" />
+                <ScalarProperty Name="MCtLine42" ColumnName="MCtLine42" />
+                <ScalarProperty Name="MCtLine41" ColumnName="MCtLine41" />
+                <ScalarProperty Name="MCtLine40" ColumnName="MCtLine40" />
+                <ScalarProperty Name="MCtLine30" ColumnName="MCtLine30" />
+                <ScalarProperty Name="MCtLine24" ColumnName="MCtLine24" />
+                <ScalarProperty Name="MCtLine23" ColumnName="MCtLine23" />
+                <ScalarProperty Name="MCtLine22" ColumnName="MCtLine22" />
+                <ScalarProperty Name="MCtLine21" ColumnName="MCtLine21" />
+                <ScalarProperty Name="MCtLine20" ColumnName="MCtLine20" />
+                <ScalarProperty Name="MCtLine12" ColumnName="MCtLine12" />
+                <ScalarProperty Name="MCtLine11" ColumnName="MCtLine11" />
+                <ScalarProperty Name="MCtLine10" ColumnName="MCtLine10" />
+                <ScalarProperty Name="MCtLine09" ColumnName="MCtLine09" />
+                <ScalarProperty Name="MCtLine08" ColumnName="MCtLine08" />
+                <ScalarProperty Name="MCtLine07" ColumnName="MCtLine07" />
+                <ScalarProperty Name="MCtLine06" ColumnName="MCtLine06" />
+                <ScalarProperty Name="MCtLine05" ColumnName="MCtLine05" />
+                <ScalarProperty Name="MCtLine04" ColumnName="MCtLine04" />
+                <ScalarProperty Name="MCtLine03" ColumnName="MCtLine03" />
+                <ScalarProperty Name="MCtLine02" ColumnName="MCtLine02" />
+                <ScalarProperty Name="MCtLine01" ColumnName="MCtLine01" />
+                <ScalarProperty Name="Filler81" ColumnName="Filler81" />
+                <ScalarProperty Name="MCovInforceInd" ColumnName="MCovInforceInd" />
+                <ScalarProperty Name="Filler71" ColumnName="Filler71" />
+                <ScalarProperty Name="MBranch" ColumnName="MBranch" />
+                <ScalarProperty Name="MCompany" ColumnName="MCompany" />
+                <ScalarProperty Name="MAuditPrint" ColumnName="MAuditPrint" />
+                <ScalarProperty Name="MRevAuditInd" ColumnName="MRevAuditInd" />
+                <ScalarProperty Name="MNewServChrgInd" ColumnName="MNewServChrgInd" />
+                <ScalarProperty Name="MCslInd" ColumnName="MCslInd" />
+                <ScalarProperty Name="MInstallmentAmt" ColumnName="MInstallmentAmt" />
+                <ScalarProperty Name="MDepositRecvd" ColumnName="MDepositRecvd" />
+                <ScalarProperty Name="MTimesToBill" ColumnName="MTimesToBill" />
+                <ScalarProperty Name="MTimesBilled" ColumnName="MTimesBilled" />
+                <ScalarProperty Name="MOptEasypayPlan" ColumnName="MOptEasypayPlan" />
+                <ScalarProperty Name="MFormState" ColumnName="MFormState" />
+                <ScalarProperty Name="MBillingState" ColumnName="MBillingState" />
+                <ScalarProperty Name="MStProRate" ColumnName="MStProRate" />
+                <ScalarProperty Name="MConvInd" ColumnName="MConvInd" />
+                <ScalarProperty Name="MNoIsfChecks" ColumnName="MNoIsfChecks" />
+                <ScalarProperty Name="Filler61" ColumnName="Filler61" />
+                <ScalarProperty Name="MLossContGrade" ColumnName="MLossContGrade" />
+                <ScalarProperty Name="MLossContTerr" ColumnName="MLossContTerr" />
+                <ScalarProperty Name="MLossContNumber" ColumnName="MLossContNumber" />
+                <ScalarProperty Name="MLossContFreq" ColumnName="MLossContFreq" />
+                <ScalarProperty Name="MGroupInsNo" ColumnName="MGroupInsNo" />
+                <ScalarProperty Name="Filler51" ColumnName="Filler51" />
+                <ScalarProperty Name="MTypeOfPolicy" ColumnName="MTypeOfPolicy" />
+                <ScalarProperty Name="MQuestOrderDate" ColumnName="MQuestOrderDate" />
+                <ScalarProperty Name="MMvrCode2" ColumnName="MMvrCode2" />
+                <ScalarProperty Name="MMvrCode1" ColumnName="MMvrCode1" />
+                <ScalarProperty Name="MUwFdcCode" ColumnName="MUwFdcCode" />
+                <ScalarProperty Name="MUwPerCode" ColumnName="MUwPerCode" />
+                <ScalarProperty Name="MPolType" ColumnName="MPolType" />
+                <ScalarProperty Name="MPolTerm" ColumnName="MPolTerm" />
+                <ScalarProperty Name="MPackageCode" ColumnName="MPackageCode" />
+                <ScalarProperty Name="MCancelFlag" ColumnName="MCancelFlag" />
+                <ScalarProperty Name="MCancProRate" ColumnName="MCancProRate" />
+                <ScalarProperty Name="MCancVoidAmt" ColumnName="MCancVoidAmt" />
+                <ScalarProperty Name="MCashCancel" ColumnName="MCashCancel" />
+                <ScalarProperty Name="MRenBillInd" ColumnName="MRenBillInd" />
+                <ScalarProperty Name="MBillsCombined" ColumnName="MBillsCombined" />
+                <ScalarProperty Name="MInstallNo" ColumnName="MInstallNo" />
+                <ScalarProperty Name="Filler41" ColumnName="Filler41" />
+                <ScalarProperty Name="MEzAmtBilled" ColumnName="MEzAmtBilled" />
+                <ScalarProperty Name="MAmtBilled" ColumnName="MAmtBilled" />
+                <ScalarProperty Name="MCashPaidAn" ColumnName="MCashPaidAn" />
+                <ScalarProperty Name="MCashPaid" ColumnName="MCashPaid" />
+                <ScalarProperty Name="MAmtDue" ColumnName="MAmtDue" />
+                <ScalarProperty Name="MTotalPolPrem" ColumnName="MTotalPolPrem" />
+                <ScalarProperty Name="MStatusCode" ColumnName="MStatusCode" />
+                <ScalarProperty Name="MReasonDue" ColumnName="MReasonDue" />
+                <ScalarProperty Name="MExtDueDate" ColumnName="MExtDueDate" />
+                <ScalarProperty Name="MDueDate" ColumnName="MDueDate" />
+                <ScalarProperty Name="MCarryDate" ColumnName="MCarryDate" />
+                <ScalarProperty Name="MReinReason" ColumnName="MReinReason" />
+                <ScalarProperty Name="MReinDate" ColumnName="MReinDate" />
+                <ScalarProperty Name="MTermReason" ColumnName="MTermReason" />
+                <ScalarProperty Name="MTerminDate" ColumnName="MTerminDate" />
+                <ScalarProperty Name="MLastHistDate" ColumnName="MLastHistDate" />
+                <ScalarProperty Name="MLastTranDate" ColumnName="MLastTranDate" />
+                <ScalarProperty Name="MLastChgEffDate" ColumnName="MLastChgEffDate" />
+                <ScalarProperty Name="MProcDateRen" ColumnName="MProcDateRen" />
+                <ScalarProperty Name="MProcDateCanc" ColumnName="MProcDateCanc" />
+                <ScalarProperty Name="MProcDateNb" ColumnName="MProcDateNb" />
+                <ScalarProperty Name="MOrigExp" ColumnName="MOrigExp" />
+                <ScalarProperty Name="MOrigEff" ColumnName="MOrigEff" />
+                <ScalarProperty Name="MOrigIncep" ColumnName="MOrigIncep" />
+                <ScalarProperty Name="MInsuredArea" ColumnName="MInsuredArea" />
+                <ScalarProperty Name="MInsuredBusAssos" ColumnName="MInsuredBusAssos" />
+                <ScalarProperty Name="MInsuredOccupation" ColumnName="MInsuredOccupation" />
+                <ScalarProperty Name="Filler31" ColumnName="Filler31" />
+                <ScalarProperty Name="MInsuredZipCode" ColumnName="MInsuredZipCode" />
+                <ScalarProperty Name="MInsuredState" ColumnName="MInsuredState" />
+                <ScalarProperty Name="MInsuredCity" ColumnName="MInsuredCity" />
+                <ScalarProperty Name="MInsuredStreet" ColumnName="MInsuredStreet" />
+                <ScalarProperty Name="MInsuredSecondName" ColumnName="MInsuredSecondName" />
+                <ScalarProperty Name="MInsuredName" ColumnName="MInsuredName" />
+                <ScalarProperty Name="MLongName" ColumnName="MLongName" />
+                <ScalarProperty Name="MNameType" ColumnName="MNameType" />
+                <ScalarProperty Name="Filler21" ColumnName="Filler21" />
+                <ScalarProperty Name="MSubAgent" ColumnName="MSubAgent" />
+                <ScalarProperty Name="MAgency4" ColumnName="MAgency4" />
+                <ScalarProperty Name="MPendDate8" ColumnName="MPendDate8" />
+                <ScalarProperty Name="MPend8" ColumnName="MPend8" />
+                <ScalarProperty Name="MPendDate7" ColumnName="MPendDate7" />
+                <ScalarProperty Name="MPend7" ColumnName="MPend7" />
+                <ScalarProperty Name="MPendDate6" ColumnName="MPendDate6" />
+                <ScalarProperty Name="MPend6" ColumnName="MPend6" />
+                <ScalarProperty Name="MPendDate5" ColumnName="MPendDate5" />
+                <ScalarProperty Name="MPend5" ColumnName="MPend5" />
+                <ScalarProperty Name="MPendDate4" ColumnName="MPendDate4" />
+                <ScalarProperty Name="MPend4" ColumnName="MPend4" />
+                <ScalarProperty Name="MPendDate3" ColumnName="MPendDate3" />
+                <ScalarProperty Name="MPend3" ColumnName="MPend3" />
+                <ScalarProperty Name="MPendDate2" ColumnName="MPendDate2" />
+                <ScalarProperty Name="MPend2" ColumnName="MPend2" />
+                <ScalarProperty Name="MPendDate1" ColumnName="MPendDate1" />
+                <ScalarProperty Name="MPend1" ColumnName="MPend1" />
+                <ScalarProperty Name="MStatSwitch" ColumnName="MStatSwitch" />
+                <ScalarProperty Name="MRateSwitch" ColumnName="MRateSwitch" />
+                <ScalarProperty Name="MEditSwitch" ColumnName="MEditSwitch" />
+                <ScalarProperty Name="MasterRecLength" ColumnName="MasterRecLength" />
+                <ScalarProperty Name="MRecType" ColumnName="MRecType" />
+                <ScalarProperty Name="MSeqNo" ColumnName="MSeqNo" />
+                <ScalarProperty Name="MLineCode" ColumnName="MLineCode" />
+                <ScalarProperty Name="Filler11" ColumnName="Filler11" />
+                <ScalarProperty Name="MAcctNo" ColumnName="MAcctNo" />
+                <ScalarProperty Name="MState" ColumnName="MState" />
+                <ScalarProperty Name="MSystemId" ColumnName="MSystemId" />
+                <ScalarProperty Name="MLastTran" ColumnName="MLastTran" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Daily_QSPdf">
+            <EntityTypeMapping TypeName="ARModel.Daily_QSPdf">
+              <MappingFragment StoreEntitySet="Daily_QSPdf">
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="TransID" ColumnName="TransID" />
+                <ScalarProperty Name="TransType" ColumnName="TransType" />
+                <ScalarProperty Name="PolicyNum" ColumnName="PolicyNum" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PortalPolicyPrints">
+            <EntityTypeMapping TypeName="ARModel.PortalPolicyPrints">
+              <MappingFragment StoreEntitySet="PortalPolicyPrints">
+                <ScalarProperty Name="PolType" ColumnName="PolType" />
+                <ScalarProperty Name="effDate" ColumnName="effDate" />
+                <ScalarProperty Name="Trtype" ColumnName="Trtype" />
+                <ScalarProperty Name="MInsuredName" ColumnName="MInsuredName" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="TransID" ColumnName="TransID" />
+                <ScalarProperty Name="MBrokerNo" ColumnName="MBrokerNo" />
+                <ScalarProperty Name="PolicyNum" ColumnName="PolicyNum" />
+                <ScalarProperty Name="LoadDate" ColumnName="LoadDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
